@@ -1,9 +1,10 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.PriorityQueue;
 
 /**
- * Clase Ordenamiento para ordenar los procesos utilizando el vectorHeap
- *
+ * Clase PriorityManager que contiene metodos para ordenar los procesos utilizando 2 diferentes implementaciones
+ * de colas de prioridad: siendo el VectorHeap, y el JCF PriorityQueue
  * @author diego leiva, pablo orellana
  */
 public class PriorityManager {
@@ -13,22 +14,42 @@ public class PriorityManager {
      * @param processes  la lista de procesos a ordenar
      * @return lista de procesos ordenados segun su prioridad
      */
-    public static List<Process> orderByPriority(List<Process> processes){
+    public static List<Process> sortByVectorHeap(List<Process> processes){
         //Ordenamiento del vectorHeap por prioridad de procesos
         VectorHeap<Process> vectorHeap = new VectorHeap<>();
 
-        for (Process proceso : processes) {
-            vectorHeap.insert(proceso);
+        for (Process process : processes) {
+            vectorHeap.insert(process);
         }
 
         //Generacion del nuevo listado ordenado por prioridad de procesos
-        List<Process> procesosOrdenados = new ArrayList<>();
+        List<Process> sortedProcesses = new ArrayList<>();
         while (!vectorHeap.isEmpty()) {
-            procesosOrdenados.add(vectorHeap.remove());
+            sortedProcesses.add(vectorHeap.remove());
         }
 
-        return procesosOrdenados;
+        return sortedProcesses;
     }
+
+
+    /**
+     * Ordena una lista de procesos utilizando la implementacion PriorityQueue
+     * del Java Collection Framework.
+     *
+     * @param processes la lista de procesos a ordenar
+     * @return lista de procesos ordenados segun su prioridad
+     */
+    public static List<Process> sortByPriorityQueueJCF(List<Process> processes) {
+        PriorityQueue<Process> priorityQueue = new PriorityQueue<>(processes);
+
+        List<Process> sortedProcesses = new ArrayList<>();
+        while (!priorityQueue.isEmpty()) {
+            sortedProcesses.add(priorityQueue.poll());
+        }
+
+        return sortedProcesses;
+    }
+
 
 
 }

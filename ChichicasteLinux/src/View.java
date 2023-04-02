@@ -11,13 +11,17 @@ public class View {
     public static void Menu(){
         System.out.println("Bienvenido a Chichicaste Linux");
         System.out.println("Un sistema de colas con prioridad para que el CPU atienda procesos\n");
+        Separator();
+        System.out.println("\nSeleccione la implementación de cola de prioridad a utilizar:");
+        System.out.println("[1] VectorHeap");
+        System.out.println("[2] JCF PriorityQueue\n");
     }
 
     /**
      * Muesta una linea separadora en consola
      */
     public static void Separator(){
-        System.out.println("\n------------------------------------------\n");
+        System.out.println("------------------------------------------");
     }
 
     /**
