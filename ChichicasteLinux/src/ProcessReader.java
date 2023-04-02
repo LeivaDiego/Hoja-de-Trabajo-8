@@ -18,7 +18,7 @@ public class ProcessReader {
      * @return una lista de objetos Process obtenidos del archivo
      * @throws IOException si ocurre un error al leer el archivo
      */
-    public static List<Process> leerProcesos(String file) throws IOException {
+    public static List<Process> getProcesses(String file) throws IOException {
         List<Process> processes = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String linea;

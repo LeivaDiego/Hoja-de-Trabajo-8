@@ -10,7 +10,7 @@ class PriorityManagerTest {
     @Test
     void testOrdenarPorVectorHeap() throws IOException {
         // Leer procesos desde el archivo de prueba
-        List<Process> procesos = ProcessReader.leerProcesos("procesos.txt");
+        List<Process> procesos = ProcessReader.getProcesses("procesos.txt");
 
         // Ordenar los procesos utilizando VectorHeap
         List<Process> procesosOrdenados = PriorityManager.sortByVectorHeap(procesos);
@@ -29,7 +29,7 @@ class PriorityManagerTest {
     @Test
     void testOrdenarPorJCF() throws IOException {
         // Leer procesos desde el archivo de prueba
-        List<Process> procesos = ProcessReader.leerProcesos("procesos.txt");
+        List<Process> procesos = ProcessReader.getProcesses("procesos.txt");
 
         // Ordenar los procesos utilizando VectorHeap
         List<Process> procesosOrdenados = PriorityManager.sortByPriorityQueueJCF(procesos);

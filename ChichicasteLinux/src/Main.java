@@ -8,7 +8,7 @@ public class Main {
         List<Process> processes;
 
         try {
-            processes = ProcessReader.leerProcesos(archivo);
+            processes = ProcessReader.getProcesses(archivo);
         } catch (IOException e) {
             View.Error("No se pudo leer el archivo de procesos: " + e.getMessage());
             return;
