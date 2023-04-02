@@ -13,14 +13,10 @@ public class Main {
             return;
         }
         View.Menu();
-        VectorHeap<Process> colaDePrioridad = new VectorHeap<>();
-        for (Process process : processes) {
-            colaDePrioridad.insert(process);
+
+        for (Process process: PriorityManager.orderByPriority(processes)){
+            View.ShowMessage(process.toString());
         }
 
-        while (!colaDePrioridad.isEmpty()) {
-            Process siguienteProceso = colaDePrioridad.remove();
-            View.ShowMessage(siguienteProceso.toString());
-        }
     }
 }
