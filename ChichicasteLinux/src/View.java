@@ -1,7 +1,7 @@
 /**
  * Clase View que maneja la entrada y salida de datos en la aplicacion
  * Se encarga de mostrar mensajes en consola al usuario
- * 
+ *
  * @author diego leiva, pablo orellana
  */
 public class View {
