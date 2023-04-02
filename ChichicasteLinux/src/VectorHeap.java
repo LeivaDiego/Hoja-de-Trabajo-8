@@ -7,7 +7,7 @@ import java.util.List;
  * REFERENCIA: http://www.cs.williams.edu/~jeannie/cs136/javadoc/structure5/structure5/VectorHeap.html
  *
  * @author diego leiva, pablo orellana
- * 
+ *
  * @param <E> el tipo de elementos almacenados en el heap, que deben ser comparables
  */
 public class VectorHeap<E extends Comparable<E>> implements IPriorityQueue<E> {
